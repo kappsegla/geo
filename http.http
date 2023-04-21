@@ -1,0 +1,13 @@
+GET localhost:8080/playgrounds
+
+###
+
+POST localhost:8080/playgrounds
+Content-Type: application/json
+
+{
+  "coordinates": {
+    "type": "Point",
+    "coordinates": [40.0, 12.7]
+  }
+}
