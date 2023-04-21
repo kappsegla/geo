@@ -8,6 +8,24 @@ Content-Type: application/json
 {
   "coordinates": {
     "type": "Point",
-    "coordinates": [40.0, 12.7]
+    "coordinates": [
+      50.0,
+      12.3
+    ]
   }
 }
+
+###
+
+POST localhost:8080/playgrounds
+Content-Type: application/json
+
+{
+  "lat": 50.0,
+  "lon": 12.5
+}
+
+
+###
+
+GET localhost:8080/playgrounds/_search

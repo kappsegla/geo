@@ -18,15 +18,19 @@ public class PlaygroundController {
     }
 
     @GetMapping("/playgrounds")
-    public List<Playground> getAll(){
+    public List<Playground> getAll() {
         return playgroundService.getAll();
     }
 
     @PostMapping("/playgrounds")
-    public ResponseEntity<Void> createNew(@RequestBody Playground playground){
-        var playg = playgroundService.createNew(playground);
+    public ResponseEntity<Void> createNew(@RequestBody Location playgroundLocation) {
+        var playg = playgroundService.createNew(playgroundLocation);
         //Todo: Add created with uri
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/playgrounds/_search")
+    public List<Playground> getInside() {
+        return playgroundService.getInside();
+    }
 }
