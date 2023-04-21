@@ -1,5 +1,8 @@
 package com.example.geo;
 
+import org.geolatte.geom.G2D;
+import org.geolatte.geom.Point;
+import org.geolatte.geom.builder.DSL;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,4 +36,10 @@ public class PlaygroundController {
     public List<Playground> getInside() {
         return playgroundService.getInside();
     }
+
+    @GetMapping("/playgrounds/_search/radius")
+    public List<Playground> getInDistance(@RequestBody LocationAndDistance locationAndDistance){
+        return playgroundService.getInDistance(locationAndDistance.lat(), locationAndDistance.lon(), locationAndDistance.distance());
+    }
+
 }

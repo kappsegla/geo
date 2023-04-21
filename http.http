@@ -21,11 +21,30 @@ POST localhost:8080/playgrounds
 Content-Type: application/json
 
 {
-  "lat": 50.0,
-  "lon": 12.5
+  "lat": 2.0,
+  "lon": 2.5
 }
 
+###
+
+POST localhost:8080/playgrounds
+Content-Type: application/json
+
+{
+  "lat": 57.679289,
+  "lon": 12.001019
+}
 
 ###
 
 GET localhost:8080/playgrounds/_search
+
+###
+GET localhost:8080/playgrounds/_search/radius
+Content-Type: application/json
+
+{
+  "lat": 57.68035,
+  "lon": 12.004645,
+  "distance": 250.0
+}
